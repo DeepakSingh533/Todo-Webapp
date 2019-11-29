@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo app</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'Todo/index.css'  %}">   
+</head>
+<body>
+
+<div class="topnav" >
+ <div> <span class="app_name">Todo App</span> </div>
+
+ <div><p class="hello_user">Hello {{user_name}}</p></div>
+
+<div align="center">
+<form class="Todo_input" action="{% url 'add' %}" method="POST">
+	{% csrf_token %}
+	{{ form.text }}
+
+	<input style="" type="submit" name="submit" value="Add" >
+	
+</form>
+</div>
+
+
+
+
+<div>
+<form  method="POST" action="{% url 'logout' %}">
+	{% csrf_token %}
+	<button class="logout" type="submit">Logout</button>
+</form>
+</div>
+
+
+</div>
+
+<!-- ************************************************************-->
+
+
+
+<div class="head_div">
+
+{% if uncompleted_todo %}
+	<p align="center" class="congo" style="color:Tomato;">Hope! You are working on your Todos.</p>
+{% else %}
+	<p align="center" class="congo">Congratulations! {{user_name}}, You have completed your all planned tasks.</p>
+
+{% endif %}	
+
+
+
+<ul>
+	<li>After you complet the task,just click on that to mark it completed.</li>
+	<li>Total Todo : {{ total_todo }}</li>
+	<li>completed Todo : {{ completed_todo }}</li>
+	<li>Uncompleted Todo : {{ uncompleted_todo }}</li>
+</ul>
+
+<div class="button_div">
+<a href="{% url 'deletecompleted' %}"><button class="delete_button">Delete completed</button></a>
+<a href="{% url 'deleteall' %}"><button class="delete_button">Delete All</button></a>	
+</div>
+
+
+	
+</div>
+
+<!-- **************************************************************************-->
+
+
+<div class="body_div">
+	<p style="color: #f2f2f2;font-size: 23px;padding: 4px 24px;">Your Todos</p><hr style="margin-top: 0px;margin-bottom: 0px;">
+
+
+{% for todo in todo_list %}
+	{% if todo.complete %}
+		<div class="data_comp"><p class="Todo_item" align="center"><del>{{todo.text}}</del></p></div>
+		
+	{% else %}
+		<a href="{% url 'complete' todo.id %}"><div class="data"><p class="Todo_item" align="center">{{todo.text}} </p></div></a>
+	{% endif%}	
+
+
+{% endfor %}
+
+</div>
+
+
+<p align="left" style="position: fixed; bottom: 10px;left: 12%;"> &copy;&nbsp;Deepak Kumar</p>
+	
+</body>
+</html>

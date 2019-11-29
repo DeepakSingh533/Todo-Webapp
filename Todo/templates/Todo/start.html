@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo-App</title>
+	<style>
+		body{
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		button{
+	font-size: 18px;
+	padding: 8px 10px;
+	color: #f2f2f2;
+	border-color: #f2f2f2;
+	border-radius: 10px;
+	background-color: #333;
+	cursor: pointer;
+		}
+		p{
+			font-size: 18px;
+		}
+		.container{
+			position: absolute;
+			left: 35%;
+			top: 20%;
+			box-shadow: 2px 2px 30px 30px #f2f2f2 ;
+			padding:30px 30px;
+			border-radius:10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<h1>This is the Todo App homepage</h1>
+	<h3>You need to be registered before you use the app</h3><br>
+
+	
+	<div><a href="shortcut">Go to Todo App</a>&nbsp;  </div>
+	
+	
+
+	<p>Already have an account?  <a href="{% url 'login' %}"><button>Login</button></a></p>
+	<p>New to the website?create your account here <a href="{% url 'signup' %}"><button>Signup</button></a></p>
+	<br>
+	<p align="center">&copy; &nbsp;Deepak Kumar</p>
+</div>
+</body>
+</html>
