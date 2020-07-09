@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '9g6ly(#7$%^k7eyj@g@ena%)04x&%)
 #to deploy on internet
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [' https://deepaksingh533.github.io/Todo-Webapp/']
 
 
 # Application definition
