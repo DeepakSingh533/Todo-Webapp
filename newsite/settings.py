@@ -20,16 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = '9g6ly(#7$%^k7eyj@g@ena%)04x&%)r31y$o%pup2#us=%9*@#'
+SECRET_KEY = '9g6ly(#7$%^k7eyj@g@ena%)04x&%)r31y$o%pup2#us=%9*@#'
 #to deploy on internet
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '9g6ly(#7$%^k7eyj@g@ena%)04x&%)r31y$o%pup2#us=%9*@#')
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '9g6ly(#7$%^k7eyj@g@ena%)04x&%)r31y$o%pup2#us=%9*@#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 #to deploy on internet
-DEBUG = False
+# DEBUG = False
 
-ALLOWED_HOSTS = [' https://deepaksingh533.github.io/Todo-Webapp/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
