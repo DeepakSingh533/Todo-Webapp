@@ -1,0 +1,20 @@
+username: admin
+email: admin@gmail.com
+password: admin
+
+project made with python 3.7 and django 3.1
+
+So just make a virtual environment and install python 3.7 in it.
+then install django in it.and its done.
+start the virtual environment.
+Go to the project directory in which manage.py file is.
+Then run the command python manage.py runserver
+and open http://127.0.0.1:8000/
+and enjoy!
+
+
+
+/////////////////////////
+another normal user credential:
+username:believe
+pass: admin@123
